@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Master Coaching</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="image.png" alt="Geography Master Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="logo-main">Newtan's Unity</h1>
+                    <p class="logo-sub">Coaching Center</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#payment">Payment</a></li>
+                    <li><a href="#question-pattern">Question Pattern</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Welcome to <span>Newtan's Unity</span></h2>
+                    <p class="hero-text">"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
+                    <div class="hero-bg-text">
+                        <p>Geography</p>
+                        <p>Coaching</p>
+                        <p>Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes" class="section">
+            <div class="container">
+                <h2 class="section-title">Geography <span>Notes</span></h2>
+                <div class="notes-grid" id="notesContainer">
+                    <!-- Notes will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment" class="section">
+            <div class="container">
+                <h2 class="section-title">Payment <span>Options</span></h2>
+                <div class="payment-content">
+                    <div class="payment-methods">
+                        <h3><i class="fas fa-rupee-sign"></i> Monthly Fee Payment</h3>
+                        <div class="upi-details">
+                            <p>UPI ID: <span id="upiId">geography.master@upi</span></p>
+                            <button onclick="copyUpi()">Copy UPI ID</button>
+                        </div>
+                        <div class="qr-code">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Scan to Pay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Pattern Section -->
+        <section id="question-pattern" class="section">
+            <div class="container">
+                <h2 class="section-title">Question <span>Pattern</span></h2>
+                <div class="pattern-container">
+                    <div class="pattern-card">
+                        <div class="pattern-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Exam Structure</h3>
+                        <p>Detailed breakdown of question types, marks distribution, and time allocation for various competitive exams.</p>
+                    </div>
+                    <div class="pattern-card">
+                        <div class="pattern-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Topic Weightage</h3>
+                        <p>Analysis of which topics carry more marks and how frequently they appear in exams.</p>
+                    </div>
+                    <div class="pattern-card">
+                        <div class="pattern-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Answering Techniques</h3>
+                        <p>Strategies for different question types including MCQs, short answers, and essay questions.</p>
+                    </div>
+                </div>
+                <div class="pattern-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exam</th>
+                                <th>Total Questions</th>
+                                <th>Duration</th>
+                                <th>Marking Scheme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UPSC Prelims</td>
+                                <td>100</td>
+                                <td>2 Hours</td>
+                                <td>+2 for correct, -0.66 for wrong</td>
+                            </tr>
+                            <tr>
+                                <td>State PSC</td>
+                                <td>150</td>
+                                <td>2.5 Hours</td>
+                                <td>+1 for correct, -0.25 for wrong</td>
+                            </tr>
+                            <tr>
+                                <td>NET/JRF</td>
+                                <td>75</td>
+                                <td>3 Hours</td>
+                                <td>+2 for correct, no negative</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section with Profile -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About <span>Us</span></h2>
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="image copy.png" alt="Geography Teacher">
+                        <div class="profile-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Mr. Newtan Mandal</h3>
+                        <p class="profile-title">Senior Geography Educator</p>
+                        <div class="profile-bio">
+                            <p>With over 15 years of experience in teaching geography, I specialize in making complex geographical concepts easy to understand. My students have consistently achieved top ranks in various competitive examinations.</p>
+                            <p>My teaching methodology focuses on conceptual clarity, map-based learning, and regular assessments to track progress.</p>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span>15+</span>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <span>2000+</span>
+                                <p>Students Taught</p>
+                            </div>
+                            <div class="stat-item">
+                                <span>150+</span>
+                                <p>Toppers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+         <section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">We'd love to hear from you! Reach out for any inquiries or feedback.</p>
+        
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>123 Geography Lane<br>Education Hub, City - 123456</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+91 9876543210<br>+91 9876543211 (WhatsApp)</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>contact@geographymaster.com<br>support@geographymaster.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-hours">
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+                </div>
+                
+                <div class="contact-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="name">Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    <label for="phone">Phone (Optional)</label>
+                </div>
+                
+                <div class="form-group">
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="admission">Admission Inquiry</option>
+                        <option value="payment">Payment Related</option>
+                        <option value="notes">Study Material</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="subject">Subject</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p class="form-note">We'll respond within 24 hours</p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Embedded Google Map -->
+        <div class="contact-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366269958029!2d77.22702231508244!3d28.628739982424833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM3JzQzLjUiTiA3N8KwMTMnNDIuMyJF!5e0!3m2!1sen!2sin!4v1624456789012!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                title="Coaching Center Location">
+            </iframe>
+        </div>
+    </div>
+</section>
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="image.png" alt="Geography Master Logo">
+                    <h3>Newtan's Unity</h3>
+                    <p>Coaching Center</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#payment">Payment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> contact@geographymaster.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Geography Master Coaching. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
