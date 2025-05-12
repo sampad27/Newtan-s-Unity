@@ -156,3 +156,31 @@ document.addEventListener('DOMContentLoaded', function() {
         heroBgText.appendChild(p);
     });
 });
+// Add this to your existing JavaScript
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const nav = document.querySelector('.nav');
+
+mobileMenuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        }
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        nav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+    }
+});
