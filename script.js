@@ -27,7 +27,7 @@ document.querySelectorAll('.nav a').forEach(link => {
 });
 
 // Add to the navigation list in header
-const sections = ['home', 'question-pattern', 'notes', 'payment', 'about', 'contact'];
+const sections = ['home', 'question-pattern', 'notes', 'about', 'contact'];
 
 // Notes Data
 const notes = [
@@ -93,24 +93,6 @@ function loadNotes() {
             </div>
         `;
         notesContainer.appendChild(noteCard);
-    });
-}
-
-// Copy UPI ID
-function copyUpi() {
-    const upiId = document.getElementById('upiId').textContent;
-    navigator.clipboard.writeText(upiId).then(() => {
-        alert('UPI ID copied to clipboard! Paste it in your payment app.');
-    }).catch(err => {
-        console.error('Failed to copy UPI ID: ', err);
-        // Fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = upiId;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        alert('UPI ID copied to clipboard!');
     });
 }
 
