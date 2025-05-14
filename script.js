@@ -1,5 +1,5 @@
-// Navigation
-document.querySelectorAll('.nav a').forEach(link => {
+// // Navigation
+document.querySelectorAll('.nav a, .footer-links a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         
@@ -12,11 +12,13 @@ document.querySelectorAll('.nav a').forEach(link => {
         const targetId = this.getAttribute('href');
         document.querySelector(targetId).classList.add('active');
         
-        // Update active nav link
-        document.querySelectorAll('.nav a').forEach(navLink => {
-            navLink.classList.remove('active');
-        });
-        this.classList.add('active');
+        // Update active nav link (only for header navigation)
+        if (this.parentElement.parentElement.classList.contains('nav')) {
+            document.querySelectorAll('.nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
         
         // Smooth scroll to top
         window.scrollTo({
@@ -26,8 +28,8 @@ document.querySelectorAll('.nav a').forEach(link => {
     });
 });
 
-// Add to the navigation list in header
-const sections = ['home', 'question-pattern', 'notes', 'about', 'contact'];
+// Sections array
+const sections = ['home', 'notes', 'practical', 'question-pattern', 'about', 'contact'];
 
 // Notes Data
 const notes = [
@@ -113,33 +115,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    // Show home section by default
-    document.querySelector('#home').classList.add('active');
-    
-    // Set first nav link as active
-    document.querySelector('.nav a').classList.add('active');
-    
-    // Load notes
-    loadNotes();
-    
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    
-    // Add background text elements
-    const bgTexts = ['Geography', 'Coaching', 'Excellence', 'Learning', 'Success'];
-    const heroBgText = document.querySelector('.hero-bg-text');
-    heroBgText.innerHTML = '';
-    
-    bgTexts.forEach(text => {
-        const p = document.createElement('p');
-        p.textContent = text;
-        heroBgText.appendChild(p);
-    });
-});
-// Add this to your existing JavaScript
-
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const nav = document.querySelector('.nav');
@@ -165,4 +140,30 @@ document.addEventListener('click', (e) => {
         nav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
     }
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    // Show home section by default
+    document.querySelector('#home').classList.add('active');
+    
+    // Set first nav link as active
+    document.querySelector('.nav a').classList.add('active');
+    
+    // Load notes
+    loadNotes();
+    
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Add background text elements
+    const bgTexts = ['Geography', 'Coaching', 'Excellence', 'Learning', 'Success'];
+    const heroBgText = document.querySelector('.hero-bg-text');
+    heroBgText.innerHTML = '';
+    
+    bgTexts.forEach(text => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        heroBgText.appendChild(p);
+    });
 });
