@@ -167,3 +167,54 @@ document.addEventListener('DOMContentLoaded', function() {
         heroBgText.appendChild(p);
     });
 });
+
+
+// Exam Papers Section
+// This section handles the switching between School and University exam papers
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Tab Switching: School vs University
+    const examTabs = document.querySelectorAll(".exam-tab");
+    const examContents = document.querySelectorAll(".exam-content");
+
+    examTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Remove active class from all tabs and contents
+            examTabs.forEach(t => t.classList.remove("active"));
+            examContents.forEach(c => c.classList.remove("active"));
+
+            // Add active class to clicked tab and related content
+            tab.classList.add("active");
+            document.getElementById(`${tab.dataset.tab}-exams`).classList.add("active");
+        });
+    });
+
+    // Grade Selector Switching (Class 10/11/12)
+    const gradeButtons = document.querySelectorAll(".grade-btn");
+    const gradePapers = document.querySelectorAll(".grade-papers");
+
+    gradeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            gradeButtons.forEach(b => b.classList.remove("active"));
+            gradePapers.forEach(p => p.classList.remove("active"));
+
+            btn.classList.add("active");
+            document.querySelector(`.grade-papers[data-grade="${btn.dataset.grade}"]`).classList.add("active");
+        });
+    });
+
+    // Semester Selector Switching (Semester 1–8)
+    const semesterButtons = document.querySelectorAll(".semester-btn");
+    const semesterPapers = document.querySelectorAll(".semester-papers");
+
+    semesterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            semesterButtons.forEach(b => b.classList.remove("active"));
+            semesterPapers.forEach(p => p.classList.remove("active"));
+
+            btn.classList.add("active");
+            document.querySelector(`.semester-papers[data-sem="${btn.dataset.sem}"]`).classList.add("active");
+        });
+    });
+});
+
